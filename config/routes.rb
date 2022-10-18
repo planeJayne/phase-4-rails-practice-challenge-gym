@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  resources :gym, only: [:index, :show]
+
+  get "/gym", to: "gym#index"
+  post "/membership/new", to: "membership#create_member"
+  # get "/gym", to: "gym"
 end
